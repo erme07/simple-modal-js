@@ -1,0 +1,16 @@
+{
+  "name": "simple-modal-js",
+  "version": "1.0.0",
+  "description": "Simple modal generator in pure javascript",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./index.js",
+    "./style.css": "./style.css"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["modal", "generator", "generador", "javascript", "js"],
+  "author": "Erik Medina",
+  "license": "ISC"
+}

@@ -1,0 +1,77 @@
+.simple-modalJS {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.simple-modalJS--hide{
+    display: none;
+}
+
+.simple-modalJS::before {
+    content: "";
+    background-color: #000000;
+    opacity: var(--overlay-opacity);
+    position: absolute;
+    inset: 0;
+}
+
+.simple-modalJS__content {
+    background-color: white;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    padding: 30px;
+    margin: 10px;
+    border-radius: 5px;
+    display:flex;
+    gap: 25px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.simple-modalJS__button {
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    color: #000000;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+}
+
+.simple-modalJS__button--close svg {
+    pointer-events: none;
+}
+
+.simple-modalJS__button--close:hover {
+    color: #ff0000;
+    transition: all 0.3s ease;
+}
+
+.simple-modalJS__text {
+    margin: 0;
+    padding: 0;
+    font-size: var(--modal-text-size);
+    color: var(--modal-text-color);
+    text-align: center;
+}
+
+.simple-modalJS__title {
+    margin: 0;
+    padding: 0;
+    font-size: var(--modal-title-size);
+    color: var(--modal-title-color);
+    text-align: center;
+}

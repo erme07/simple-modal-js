@@ -11,14 +11,14 @@ class SimpleModalJS {
         };
         this.modal = {
             title: {
-                text: modal.title?.text ?? 'Ventana Modal',
+                text: modal.title?.text ?? 'Window title',
                 textColor: modal.title?.textColor ?? 'black',
-                size: modal.title?.size ?? '18px',
+                size: modal.title?.size ?? '20px',
             },
             content: {
-                text: modal.content?.text ?? 'Contenido por defecto',
+                text: modal.content?.text ?? 'Enter the text that will appear in the modal window. The text size and color can be customized.',
                 textColor: modal.content?.textColor ?? 'black',
-                size: modal.content?.size ?? '16px',
+                size: modal.content?.size ?? '18px',
             },
         };
         this.init();

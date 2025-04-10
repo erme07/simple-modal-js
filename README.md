@@ -58,3 +58,26 @@ modal.show();
 
 ## Configuration
 
+You can customize the modal window by passing a configuration object when instantiating the class.
+
+```javascript
+
+const modal = new SimpleModalJS({
+    overlay:{
+        show: "true",
+        opacity: '0.8',
+    },
+    modal:{
+        title:{
+            text: 'Titulo de la ventana',
+            textColor: 'black',
+            size: '20px',
+        },
+        content:{
+            text: 'Ingrese el texto que contendrá la ventana modal. El tamaño y color del texto se pueden personalizar.',
+            textColor: 'black',
+            size: '18px',
+        },
+    }
+});
+```

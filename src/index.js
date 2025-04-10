@@ -1,5 +1,5 @@
 
-class simpleModalJS {
+class SimpleModalJS {
 
     #initialized = false
 
@@ -92,10 +92,12 @@ class simpleModalJS {
     
     init () {
         if (this.#initialized) return;
-        this.#createModal();
-        document.body.appendChild(this.$modal);
-        this.#initialized = true;
+        document.addEventListener("DOMContentLoaded", () => {
+            this.#createModal();
+            document.body.appendChild(this.$modal);
+            this.#initialized = true;
+        });
     }
 }
 
-export default simpleModalJS;
+export default SimpleModalJS;

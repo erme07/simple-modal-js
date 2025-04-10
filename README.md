@@ -4,16 +4,20 @@ Una librería simple para crear ventanas modales personalizadas con JavaScript.
 
 ## Instalación
 
+### Via NPM
+
 ```bash
 npm install simple-modal-js
 ```
-## Uso
+
 ```javascript
-import simpleModalJS from 'simple-modal-js';
 
-//configure the modal window
+import SimpleModalJS from 'simple-modal-js';
 
-const modal = new simpleModalJS({
+const modal = new simpleModalJS(config);
+
+
+const config = {
     overlay:{
         show: "true",
         opacity: '0.8',
@@ -30,5 +34,6 @@ const modal = new simpleModalJS({
             size: '18px',
         },
     }
-});
+}
+
 ```

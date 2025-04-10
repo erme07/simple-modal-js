@@ -46,8 +46,8 @@ class SimpleModalJS {
         $modalContent.appendChild($modalTitle);
         $modalContent.appendChild($modalText);
         $modalContent.appendChild($modalClose);
-        this.$modal.appendChild($modalContent);
         this.hide();
+        this.$modal.appendChild($modalContent);
     }
 
     #createModalTitle() {

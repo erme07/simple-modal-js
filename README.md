@@ -1,10 +1,42 @@
 # simpleModalJS
 
-Una librería simple para crear ventanas modales personalizadas con JavaScript.
+A simple library for generating modal windows using JavaScript.
 
-## Instalación
+## Installation
 
-### Via NPM
+### CDN
+
+```html
+<script src="https://cdnjs.sfsffsdfsdffsdfsdfdfs"></script>
+<script>
+    const config = {
+        overlay:{
+            show: "true",
+            opacity: '0.8',
+        },
+        modal:{
+            title:{
+                text: 'Titulo de la ventana',
+                textColor: 'black',
+                size: '20px',
+            },
+            content:{
+                text: 'Ingrese el texto que contendrá la ventana modal. El tamaño y color del texto se pueden personalizar.',
+                textColor: 'black',
+                size: '18px',
+            },
+        }
+    }
+    
+    const modal = new SimpleModalJS(config);
+
+    modal.show();
+</script>
+
+```
+
+
+### NPM
 
 ```bash
 npm install simple-modal-js
@@ -13,9 +45,6 @@ npm install simple-modal-js
 ```javascript
 
 import SimpleModalJS from 'simple-modal-js';
-
-const modal = new simpleModalJS(config);
-
 
 const config = {
     overlay:{
@@ -35,5 +64,11 @@ const config = {
         },
     }
 }
+
+const modal = new SimpleModalJS(config);
+
+modal.show();
+
+
 
 ```

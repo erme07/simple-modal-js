@@ -3,26 +3,37 @@
   "version": "0.1.0",
   "description": "Simple modal generator in pure javascript",
   "type": "module",
-  "main": "./dist/main.iife.min.js",
+  "main": "./dist/main.min.js",
   "module": "./dist/main.esm.js",
   "exports": {
     ".": {
       "import": "./dist/main.esm.js",
-      "require": "./dist/main.cjs.js",
-      "default": "./dist/main.iife.min.js"
+      "default": "./dist/main.min.js"
     },
-    "./style.css": "./dist/style.css"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "./style.css": "./dist/style.css",
+    "./style.min.css": "./dist/style.min.css"
   },
   "style": "./dist/style.css",
+  "scripts": {
+    "build:rollup": "rollup -c",
+    "build:css:min": "csso dist/style.css --output dist/style.min.css",
+    "build": "npm run build:rollup && npm run build:css:min"
+  },
   "files": [
     "dist/",
     "README.md",
     "LICENSE"
   ],
-  "keywords": ["modal", "window", "ventana", "generator", "generador", "javascript", "js", "simple"],
+  "keywords": [
+    "modal",
+    "window",
+    "ventana",
+    "generator",
+    "generador",
+    "javascript",
+    "js",
+    "simple"
+  ],
   "author": "Erik Medina (https://github.com/erme07)",
   "repository": {
     "type": "git",
@@ -32,5 +43,11 @@
     "url": "https://github.com/erme07/simple-modal-js/issues"
   },
   "homepage": "https://github.com/erme07/simple-modal-js#readme",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "csso-cli": "^4.0.2",
+    "rollup": "^2.79.2",
+    "rollup-plugin-postcss": "^4.0.2"
+  }
 }

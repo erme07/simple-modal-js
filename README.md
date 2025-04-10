@@ -7,7 +7,7 @@ A simple library for generating modal windows using JavaScript.
 ### CDN
 
 ```html
-<script src="https://cdnjs.sfsffsdfsdffsdfsdfdfs"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-modal-js@0.1.1/dist/main.min.js"></script>
 
 <script>
     const modal = new SimpleModalJS();
@@ -26,7 +26,7 @@ npm install simple-modal-js
 
 ```html
 
-<script src="node_modules/simple-modal-js/dist/main.iife.min.js"></script>
+<script src="node_modules/simple-modal-js/dist/main.min.js"></script>
 <script>
     const modal = new SimpleModalJS();
     modal.show();

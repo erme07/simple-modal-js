@@ -1,6 +1,6 @@
 {
   "name": "simple-modal-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple modal generator in pure javascript",
   "type": "module",
   "main": "./dist/main.min.js",
@@ -37,7 +37,7 @@
   "author": "Erik Medina (https://github.com/erme07)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/erme07/simple-modal-js.git"
+    "url": "git+https://github.com/erme07/simple-modal-js.git"
   },
   "bugs": {
     "url": "https://github.com/erme07/simple-modal-js/issues"

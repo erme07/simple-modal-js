@@ -7,7 +7,7 @@ class SimpleModalJS {
 
         this.overlay = {
             show: overlay.show ?? true,
-            opacity: overlay.opacity ?? '0.8',
+            opacity: overlay.opacity ?? 0.8,
         };
         this.modal = {
             title: {

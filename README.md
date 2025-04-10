@@ -64,20 +64,41 @@ You can customize the modal window by passing a configuration object when instan
 
 const modal = new SimpleModalJS({
     overlay:{
-        show: "true",
-        opacity: '0.8',
+        show: true,
+        opacity: 0.8,
     },
     modal:{
         title:{
-            text: 'Titulo de la ventana',
+            text: 'Window title',
             textColor: 'black',
             size: '20px',
         },
         content:{
-            text: 'Ingrese el texto que contendrá la ventana modal. El tamaño y color del texto se pueden personalizar.',
+            text: 'Enter the text that will appear in the modal window. The text size and color can be customized.',
             textColor: 'black',
             size: '18px',
         },
     }
 });
 ```
+
+### Configuration structure
+
+#### Overlay:
+
+|Property  |Type                   |Default value     |Description                      |
+|:---------|:----------------------|:----------------:|---------------------------------|
+|show      |boolean [true-false]   |true              | Defines visibility of overlay   |
+|opacity   |number [0-1]           |0.8               | Sets opacity of overlay         |
+
+#### Modal: Title - Content
+
+|Property  |Type                          |Default value     |Description                         |
+|:---------|:-----------------------------|:----------------:|------------------------------------|
+|text      |string                        |"placeholder"     | Defines the content of the element |
+|textColor |string [valid color format]   |"black"           | Sets the text color                |
+|size      |string [pixels]               |"20px"/"18px"     | Defines the text size              |
+
+## License
+
+[MIT License](https://raw.githubusercontent.com/erme07/simple-modal-js/refs/heads/main/LICENSE). Copyright (c) 2025 Erik Medina

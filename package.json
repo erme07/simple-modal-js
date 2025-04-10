@@ -2,6 +2,7 @@
   "name": "simple-modal-js",
   "version": "0.1.0",
   "description": "Simple modal generator in pure javascript",
+  "type": "module",
   "main": "./dist/main.iife.min.js",
   "module": "./dist/main.esm.js",
   "exports": {
@@ -15,12 +16,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "style": "./dist/style.css",
   "files": [
     "dist/",
     "README.md",
     "LICENSE"
   ],
   "keywords": ["modal", "window", "ventana", "generator", "generador", "javascript", "js", "simple"],
-  "author": "Erik Medina <erik.medina07@gmail.com> (https://github.com/erme07)",
+  "author": "Erik Medina (https://github.com/erme07)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erme07/simple-modal-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/erme07/simple-modal-js/issues"
+  },
+  "homepage": "https://github.com/erme07/simple-modal-js#readme",
   "license": "MIT"
 }

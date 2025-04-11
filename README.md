@@ -1,6 +1,8 @@
 # Simple Modal JS
 
-A simple library for generating modal windows using JavaScript.
+Simple Modal JS is a lightweight, dependency-free library for creating customizable modal windows using JavaScript configuration objects. Developers can easily adjust the design, behavior, and other aspects of the modal without the need to write any CSS.
+
+Ideal for developers looking for a quick, flexible, and easily integrable solution to display modal content in the browser.
 
 ## Installation
 

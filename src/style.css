@@ -12,14 +12,14 @@
 }
 
 .simple-modalJS::before {
-    content: "";
+    content: var(--overlay-content);
     background-color: #000000;
     opacity: var(--overlay-opacity);
     position: absolute;
     inset: 0;
 }
 
-.simple-modalJS__content {
+.simple-modalJS__window {
     background-color: white;
     position: relative;
     width: 100%;

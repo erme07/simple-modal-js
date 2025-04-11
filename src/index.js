@@ -1,8 +1,12 @@
-import './style.css';
+//import './style.css';
 
 class SimpleModalJS {
 
-    #initialized = false
+    $modalWrapper = null
+    $modal_window = null
+    $modal_title = null
+    $modal_text = null
+    $modal_close = null
 
     constructor({overlay = {}, modal = {}} = {}) {
 
@@ -25,79 +29,86 @@ class SimpleModalJS {
         this.init();
     }
 
-    #applyStyles() {
-        this.$modal.style.setProperty('--overlay-opacity', this.overlay.opacity);
-        this.$modal.style.setProperty('--modal-title-color', this.modal.title.textColor);
-        this.$modal.style.setProperty('--modal-title-size', this.modal.title.size);
-        this.$modal.style.setProperty('--modal-text-color', this.modal.content.textColor);
-        this.$modal.style.setProperty('--modal-text-size', this.modal.content.size);
-        this.$modal.classList.add('simple-modalJS');
+    #addCustomProperties() {
+        if(this.overlay.show)
+            this.$modalWrapper.style.setProperty('--overlay-content', "\"\"");
+        else
+            this.$modalWrapper.style.setProperty('--overlay-content', "none");
+        this.$modalWrapper.style.setProperty('--overlay-opacity', this.overlay.opacity);
+        this.$modalWrapper.style.setProperty('--modal-title-color', this.modal.title.textColor);
+        this.$modalWrapper.style.setProperty('--modal-title-size', this.modal.title.size);
+        this.$modalWrapper.style.setProperty('--modal-text-color', this.modal.content.textColor);
+        this.$modalWrapper.style.setProperty('--modal-text-size', this.modal.content.size);
     }
 
     #createModal(){
-        this.$modal = document.createElement('div');
-        this.#applyStyles();
-        
-        const $modalContent = document.createElement('div');
-        $modalContent.classList.add('simple-modalJS__content');
-        const $modalTitle = this.#createModalTitle();
-        const $modalText = this.#createModalText();
-        const $modalClose = this.#createCloseButton();
-
-        $modalContent.appendChild($modalTitle);
-        $modalContent.appendChild($modalText);
-        $modalContent.appendChild($modalClose);
+        this.$modalWrapper = document.createElement('div');
+        this.$modalWrapper.classList.add('simple-modalJS');
         this.hide();
-        this.$modal.appendChild($modalContent);
+        
+        this.$modal_window = document.createElement('div');
+        this.$modal_window.classList.add('simple-modalJS__window');
+
+        this.#createModalTitle();
+        this.#createModalText();
+        this.#createCloseButton();
+
+        this.$modal_window.appendChild(this.$modal_title);
+        this.$modal_window.appendChild(this.$modal_text);
+        this.$modal_window.appendChild(this.$modal_close);
+        
+        this.$modalWrapper.appendChild(this.$modal_window);
     }
 
     #createModalTitle() {
-        const $modalTitle = document.createElement('h2');
-        $modalTitle.classList.add('simple-modalJS__title');
-        $modalTitle.textContent = this.modal.title.text;
-        return $modalTitle;
+        this.$modal_title = document.createElement('h2');
+        this.$modal_title.classList.add('simple-modalJS__title');
+        this.$modal_title.textContent = this.modal.title.text;
     }
 
     #createModalText() {
-        const $modalText = document.createElement('p');
-        $modalText.classList.add('simple-modalJS__text');
-        $modalText.textContent = this.modal.content.text;
-        return $modalText;
+        this.$modal_text = document.createElement('p');
+        this.$modal_text.classList.add('simple-modalJS__text');
+        this.$modal_text.textContent = this.modal.content.text;
     }
 
     #createCloseButton() {
-        const $modalClose = document.createElement('button');
-        $modalClose.classList.add('simple-modalJS__button', 'simple-modalJS__button--close');
-        $modalClose.id = 'close';
-        $modalClose.innerHTML = `
+        this.$modal_close = document.createElement('button');
+        this.$modal_close.classList.add('simple-modalJS__button', 'simple-modalJS__button--close');
+        this.$modal_close.id = 'close';
+        this.$modal_close.innerHTML = `
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="25" height="25">
                 <path d="M16 16L12 12M12 12L8 8M12 12L16 8M12 12L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
         `;
-        return $modalClose;
     }
 
     clickHandler = (e) => {
-        if ((e.target.id === "close") || (e.target.classList.contains("simple-modalJS")))
-            this.close();
+        if ((e.target === this.$modal_close) || (e.target === this.$modalWrapper))
+            this.hide();
     }
 
     hide(){
-        this.$modal.classList.add('simple-modalJS--hide');
-        document.removeEventListener("click", this.clickHandler);
+        this.$modalWrapper.classList.add('simple-modalJS--hide');
     }
     show(){
-        this.$modal.classList.remove('simple-modalJS--hide');
-        document.addEventListener("click", this.clickHandler);
+        this.$modalWrapper.classList.remove('simple-modalJS--hide');
+    }
+
+    removeFromDOM() {
+        this.$modalWrapper.remove();
+    }
+
+    addToDOM() {
+        document.body.appendChild(this.$modalWrapper);
     }
     
     init () {
-        if (this.#initialized) return;
-        document.addEventListener("DOMContentLoaded", () => {
-            this.#createModal();
-            document.body.appendChild(this.$modal);
-            this.#initialized = true;
-        });
+        if (this.$modalWrapper) return;
+        this.#createModal();
+        this.#addCustomProperties();
+        document.addEventListener("DOMContentLoaded", () => this.addToDOM());
+        document.addEventListener("click", this.clickHandler);
     }
 }
 

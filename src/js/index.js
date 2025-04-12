@@ -2,7 +2,7 @@
 import { createElementHTML, closeIconSVG } from './utils.js';
 import { DEFAULTS } from './config.js';
 
-import './style.css';
+import '../style.css';
 
 class SimpleModalJS {
 

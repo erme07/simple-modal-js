@@ -1,6 +1,5 @@
 /node_modules
 /src/scss
-/src/js
 /dist
 app.js
 index.html

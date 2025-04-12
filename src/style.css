@@ -64,6 +64,8 @@
     margin: 0;
     padding: 0;
     font-size: var(--modal-text-size);
+    font-family: var(--modal-text-font-family);
+    font-weight: var(--modal-text-font-weight);
     color: var(--modal-text-color);
     text-align: center;
 }
@@ -71,6 +73,8 @@
 .simple-modalJS__title {
     margin: 0;
     padding: 0;
+    font-family: var(--modal-title-font-family);
+    font-weight: var(--modal-title-font-weight);
     font-size: var(--modal-title-size);
     color: var(--modal-title-color);
     text-align: center;

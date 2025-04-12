@@ -6,6 +6,22 @@ This project adheres to [Semantic Versioning](https://semver.org/) and follows t
 
 ---
 
+## [0.3.0] - 2025-04-12
+### Added
+- Static property to count the number of instances of the class `#instance`.
+- Private function that generates an ID for the modal window `#genetareID()`.
+- Property for the modal ID `modalID`.
+- New customization keys for the configuration object `font` and `weight`
+
+### Changed
+- Refactored the code into separate modules for greater maintainability
+- Update documentation
+
+### Fixed
+- The class properties are now declared within the constructor.
+
+---
+
 ## [0.2.0] - 2025-04-11
 ### Added
 - `addToDOM` and `removeFromDOM` methods to add or remove the modal from the DOM.
@@ -25,7 +41,7 @@ This project adheres to [Semantic Versioning](https://semver.org/) and follows t
 
 ## [0.1.1] - 2025-04-10
 ### Fixed
-- Refactored cdoe.
+- Refactored code.
 - Incorrect code in the documentation (`README.md`).
 
 ---

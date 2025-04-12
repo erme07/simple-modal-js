@@ -9,7 +9,7 @@ Ideal for developers looking for a quick, flexible, and easily integrable soluti
 ### CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/simple-modal-js@0.2.0/dist/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-modal-js@0.3.0/dist/main.min.js"></script>
 
 <script>
     const modal = new SimpleModalJS();
@@ -67,8 +67,9 @@ modal.show();
 | removeFromDOM()    | Removes the modal window from the dom.   |
 | addToDOM()         | Adds the modal window to the dom.        |
 
-| Attributes       | Description                                            |
+| Property         | Description                                            |
 |:-----------------|:-------------------------------------------------------|
+| modalID          | Contains the ID of the modal.                          |
 | $modalWrapper    | Contains all the elements that are part of the modal.  |
 | $modal_window    | Saves the reference to the modal window.               |
 | $modal_title     | Saves the reference to the title.                      |
@@ -88,32 +89,38 @@ You can customize the modal window by passing a configuration object when instan
 
 ### Modal: Title - Content
 
-|Property  |Type                          |Default value     |Description                         |
-|:---------|:-----------------------------|:----------------:|------------------------------------|
-|text      |string                        |"placeholder"     | Defines the content of the element |
-|textColor |string [valid color format]   |"black"           | Sets the text color                |
-|size      |string [pixels]               |"20px"/"18px"     | Defines the text size              |
+|Property  |Type                          |Default value     |Description                                   |
+|:---------|:-----------------------------|:----------------:|----------------------------------------------|
+|text      |string                        |"placeholder"     | Defines the content of the element.          |
+|textColor |string [valid color format]   |"black"           | Sets the text color.                         |
+|font      |string                        |"san-serif"       | Defines the font family.                     |
+|weight    |string                        |"normal"          | Sets the weight (or boldness) of the font.   |
+|size      |string [pixels]               |"20px"/"18px"     | Defines the text size.                       |
 
 
 
 ```javascript
 
 const modal = new SimpleModalJS({
-    overlay:{
-        show: true,
-        opacity: 0.8,
+    overlay: { 
+        show: true, 
+        opacity: 0.8 
     },
-    modal:{
-        title:{
+    modal: {
+        title: {
             text: 'Window title',
             textColor: 'black',
+            font: 'sans-serif',
+            weight: 'bold',
             size: '20px',
         },
-        content:{
+        content: {
             text: 'Enter the text that will appear in the modal window. The text size and color can be customized.',
             textColor: 'black',
+            font: 'sans-serif',
+            weight: 'normal',
             size: '18px',
-        },
+        }
     }
 });
 ```
